@@ -374,7 +374,7 @@ jobs:
         run: |
           ## CHECKSUM GENERATION SCRIPT
           shopt -s extglob
-          echo "### Checksums" > ${{ github.workspace }}/CHECKSUMS.txt
+          echo "### SHA-256 Checksums" > ${{ github.workspace }}/CHECKSUMS.txt
           for file in ${{ github.workspace }}/**/@(*.pkg|*.exe|*.deb|*.zip); do
             echo "    ${file##*/}: $(sha256sum "${file}" | cut -d " " -f 1)" >> ${{ github.workspace }}/CHECKSUMS.txt
           done
